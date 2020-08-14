@@ -1,8 +1,7 @@
-class Config {
-  // These need to be passed in
-  public basePath: string = "";
-  public client_id: string = "";
-  public client_secret: string = "";
+const currentConfig = {
+  basePath: "",
+  client_id: "",
+  client_secret: "",
 
   /** 
    * Authorization scopes  
@@ -12,10 +11,11 @@ class Config {
    * `activity:read` 
    * `profile:read_all` lets us get HR zones
    **/
-  public auth_scopes: string = "read,activity:read,profile:read_all";
+  auth_scopes: "read,activity:read,profile:read_all",
 
   /** How long to delay between the webhook to posting to the channel to give people a chance to edit the title. In milliseconds  */
-  public webhook_delay: number = 0;
+  webhook_delay: 0
 }
 
-export default new Config();
+export type Config = typeof currentConfig;
+export default currentConfig;

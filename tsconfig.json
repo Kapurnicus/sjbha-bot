@@ -9,8 +9,8 @@
   },
   "files": [],
   "references": [
+    {"path": "./app"},
     {"path": "./commands/fit"},
-    {"path": "./packages/app"},
     {"path": "./packages/bastion"},
     {"path": "./packages/bastion-toolkit"},
     {"path": "./packages/strava-client"},

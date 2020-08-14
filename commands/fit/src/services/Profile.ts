@@ -1,6 +1,6 @@
-import Strava from "../infra/strava";
-import Repository from "../infra/repository";
-import {createEffortFromAPI} from "../models/ActivityEffort";
+import Strava from "./Strava";
+import Repository from "./Repository";
+import * as Mappers from "../models/mappers";
 
 export default class ProfileService {
   constructor(
@@ -21,7 +21,7 @@ export default class ProfileService {
       client.getActivityStreams(activityId)
     ]);
 
-    const effort = createEffortFromAPI(zones, stream);
+    const effort = Mappers.createEffortFromAPI(zones, stream);
 
     console.log("effort", effort);
     // Fetch and save the refresh token for future requests

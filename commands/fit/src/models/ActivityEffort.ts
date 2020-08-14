@@ -2,7 +2,7 @@
 // Zone 2 is considered "active" and anything higher than that is considered "hard"
 // This is based off "moderate vs vigorous" activity articles out there, by recommendation of health officials
 
-export class ActivityEffort {
+export default class ActivityEffort {
   /** Time spent in rest (in seconds) */
   public readonly rest = 0;
   
@@ -50,16 +50,4 @@ export class ActivityEffort {
       }
     }
   }
-}
-
-
-// Mappers
-import { Strava } from "@bored/strava-client";
-
-export async function createEffortFromAPI(zones: Strava.ZonesResponse, stream: Strava.ActivityStreamResponse) {
-  return new ActivityEffort(
-    zones.heart_rate.zones.map(i => i.max),
-    stream.heartrate.data, 
-    stream.time.data
-  );
 }

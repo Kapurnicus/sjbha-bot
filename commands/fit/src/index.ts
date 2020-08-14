@@ -1,7 +1,7 @@
 // Set configuration variables
-import Config from "./config";
-export const config = (cfg: typeof Config) => {
-  Object.assign(Config, cfg);
+import {default as currentConfig, Config} from "./config";
+export const config = (cfg: Partial<Config>) => {
+  Object.assign(currentConfig, cfg);
 }
 
 

@@ -1,10 +1,9 @@
 import config from "../config";
 import {StravaAuthClient} from "@bored/strava-client";
-import Repository from "../infra/repository";
+import Repository from "./Repository";
 import { NotConnected, Unauthorized } from "../errors";
 
-import User from "../models/User";
-import * as mapper from "../models/User";
+import * as Mappers from "../models/mappers";
 
 export default class Authorization {
   constructor(
@@ -18,8 +17,8 @@ export default class Authorization {
     } catch (e) {
       if (e.name !== NotConnected.type) throw (e);
 
-      const user = mapper.createUserFromDiscordId(discordId);
-      await this.repository.insertUser(mapper.userToDTO(user));
+      const user = Mappers.createUserFromDiscordId(discordId);
+      await this.repository.insertUser(Mappers.userToDTO(user));
       return user;
     }
   }
@@ -69,7 +68,7 @@ export default class Authorization {
 
     await this.repository.update(
       user.id, 
-      mapper.userToDTO(user)
+      Mappers.userToDTO(user)
     );
   }
 }

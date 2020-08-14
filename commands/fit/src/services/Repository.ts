@@ -3,8 +3,7 @@ import type {Collection} from "mongodb";
 import dot from '@bored/mongodb-dot';
 import Debug from "debug";
 import { NotConnected, Unauthorized } from "../errors";
-import User from "../models/User";
-import * as Mapper from "../models/User";
+import * as Mapper from "../models/mappers";
 
 const debug = Debug("c/fit:repository");
 const COLLECTION_NAME = 'fit-users';
