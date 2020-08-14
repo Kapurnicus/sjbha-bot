@@ -1,0 +1,10 @@
+{
+  "name": "@bored/strava-client",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@bored/node-wretch": "1.0.0",
+    "querystring": "^0.2.0"
+  }
+}

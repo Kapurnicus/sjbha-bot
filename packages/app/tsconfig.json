@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "outDir": "dist",
+    "rootDir": "src",
+    "experimentalDecorators": true
+  }
+}

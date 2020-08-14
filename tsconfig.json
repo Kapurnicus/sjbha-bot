@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "esnext"
+  },
+  "files": [],
+  "references": [
+    {"path": "./commands/fit"},
+    {"path": "./packages/app"},
+    {"path": "./packages/bastion"},
+    {"path": "./packages/bastion-toolkit"},
+    {"path": "./packages/strava-client"},
+    {"path": "./packages/mongodb-dot"},
+    {"path": "./packages/mongodb"}
+  ]
+}

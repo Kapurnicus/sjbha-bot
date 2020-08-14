@@ -1,0 +1,49 @@
+{
+  "embed": {
+    "color": 15295030,
+    "author": {
+      "name": "s3b",
+      "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+    },
+    "fields": [
+      {
+        "name": "Level",
+        "value": "5.12",
+        "inline": true
+      },
+      {
+        "name": "Total Points",
+        "value": "340",
+        "inline": true
+      },
+      {
+        "name": "30 Day Points",
+        "value": "104 (Rank #3)",
+        "inline": true
+      },
+      {
+        "name": "Last Activity",
+        "value": "🏃 Afternoon Run • *yesterday*"
+      },
+      {
+        "name": "Current Streak",
+        "value": "3",
+        "inline": true
+      },
+      {
+        "name": "Longest Streak",
+        "value": "6",
+        "inline": true
+      },
+      {
+        "name": "30 Day Totals",
+        "value": "21 activities"
+      },
+      {
+        "name": 
+      }
+        "value": "**Run** • 2hr 33min / 10mi\n**Bike** • 3hr 15min / 44mi\n**Crossfit** • 1hr 25min\n**Yoga** • 45min"
+      }
+    ]
+  }
+}

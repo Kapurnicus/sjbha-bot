@@ -1,0 +1,11 @@
+{
+  "name": "@bored/mongodb",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "mongodb": "^3.6.0"
+  }
+}

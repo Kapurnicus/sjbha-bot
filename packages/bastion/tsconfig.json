@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "commonjs",
+    "target": "ES6",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "outDir": "dist",
+    "declaration": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true
+  }
+}

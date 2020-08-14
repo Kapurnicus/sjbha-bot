@@ -1,0 +1,16 @@
+{
+  "name": "@bored/bastion",
+  "description": "The wrapper around the discord library for easily routing of commands",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "discord.js": "^12.2.0",
+    "ts-node-dev": "^1.0.0-pre.56"
+  }
+}

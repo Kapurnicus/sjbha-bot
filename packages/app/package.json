@@ -1,0 +1,27 @@
+{
+  "name": "@bored/app",
+  "version": "0.0.1",
+  "description": "Main entry point to start the bot",
+  "private": true,
+  "dependencies": {
+    "@bored/bastion": "1.0.0",
+    "@bored/bastion-toolkit": "1.0.0",
+    "@commands/fit": "1.0.0",
+    "@commands/ping": "1.0.0",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.9.27"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.7",
+    "@types/mongoose": "^5.7.36",
+    "@types/node": "^14.0.27",
+    "@types/simple-oauth2": "^4.1.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "../mongodb-dot/src",
+    "outDir": "../mongodb-dot/dist"
+  },
+  "include": [
+    "../mongodb-dot/src/**/*"
+  ]
+}
