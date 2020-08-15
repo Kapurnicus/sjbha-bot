@@ -1,13 +1,11 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "composite": true,
-    "module": "commonjs",
-    "target": "ES6",
-    "moduleResolution": "node",
-    "sourceMap": false,
+    "rootDir": "src",
     "outDir": "dist",
-    "declaration": true,
-    "skipLibCheck": true,
-    "experimentalDecorators": true
-  }
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/**/*"
+  ]
 }

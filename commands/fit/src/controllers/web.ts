@@ -1,9 +1,13 @@
 import * as express from "express";
 import Debug from "debug";
-import { NotConnected } from "./errors";
+import config from "../config";
+import { NotConnected } from "../errors";
 
-import AuthService from "./services/Authorization";
-import ProfileService from "./services/Profile";
+import AuthService from "../services/AuthService";
+import ProfileService from "../services/ProfileService";
+import {TextChannel} from "discord.js";
+
+import ActivityEmbed from "../embeds/ActivityEmbed";
 
 const debug = Debug("c/fit:auth-web");
 const auth = new AuthService();
@@ -101,11 +105,14 @@ export async function postActivity(req: express.Request, res: express.Response) 
   try {
     // todo: make sure to only post on creation
     // if (eventType === "create")
-    await profile.addActivity(stravaId, activityId);
+    const result = await profile.addActivity(stravaId, activityId);
 
-    // todo: implementation
-    // something.
-    
+    // whew damn
+    const channel = req.bastion.client.channels.cache.get(config.post_to_channel) as TextChannel;
+
+    const activity = ActivityEmbed.create()
+    await channel.send(activity.getEmbed())
+
     res.status(200).send("Posted");
   } catch (e) {
     if (e.name === NotConnected.type) {

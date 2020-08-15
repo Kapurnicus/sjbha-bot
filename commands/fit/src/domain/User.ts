@@ -1,5 +1,6 @@
 import Auth from "./Auth";
 import Profile from "./Profile";
+import ActivityEffort from "./ActivityEffort";
 
 export default class User {
   constructor(
@@ -13,8 +14,15 @@ export default class User {
   get password() { return this._auth.password; }
   get refreshToken() { return this._auth.refreshToken; }
 
+  get exp() { return this._profile.exp; }
+  get level() { return this._profile.level; }
+
   public linkStrava(stravaId: string, refreshToken: string) {
     this._auth.linkToStrava(stravaId, refreshToken);
+  }
+
+  public addEffort(effort: ActivityEffort) {
+    return this._profile.addEffort(effort);
   }
 
   public json = () => ({

@@ -1,14 +1,11 @@
 // Set configuration variables
-import {default as currentConfig, Config} from "./config";
-export const config = (cfg: Partial<Config>) => {
-  Object.assign(currentConfig, cfg);
-}
+export {setConfig as config} from "./config";
 
 
 // Bot code
 import * as bastion from "@bored/bastion";
 import {routeParam} from "@bored/bastion-toolkit";
-import * as bot from "./bot";
+import * as bot from "./controllers/bot";
 
 const botRouter = new bastion.Router()
 
@@ -21,7 +18,7 @@ export const command = routeParam(botRouter, {default: "help"});
 
 // Web controllers
 import * as express from "express";
-import * as web from "./web";
+import * as web from "./controllers/web";
 
 const router = express.Router();
 

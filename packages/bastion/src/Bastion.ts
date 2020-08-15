@@ -2,12 +2,13 @@ import * as Discord from "discord.js";
 import Router, {Middleware} from "./Router";
 import Response from "./Response";
 import Debug from "debug";
+import shortid from "shortid";
 
 const debug = Debug("bastion");
 
 export default class Bastion extends Router {
   /** Reference to the `discord.js` library client */
-  private client = new Discord.Client();
+  public readonly client = new Discord.Client();
   /** Discord API token */
   private token: string;
   /** The character used to initiate a command */
@@ -21,7 +22,7 @@ export default class Bastion extends Router {
   }
 
   /** Event handler for when a message comes in */
-  private onMessage = (msg: Discord.Message) => {
+  private onMessage = async (msg: Discord.Message) => {
     // ignore self
     if (msg.author.bot) return;
 
@@ -36,7 +37,21 @@ export default class Bastion extends Router {
     )
 
     const res = new Response(this.client, msg);
-    this.handle(route, msg, res)
+
+    try {
+      this.handle(route, msg, res)
+    } catch (e) {
+      const id = shortid();
+      debug(`ERROR ${id}: An uncaught error occured in '${this.instigator}${command}'`)
+
+      await msg.channel.send(`An unhandled error occured and has been logged under ID \`${id}\``)
+
+      throw e;
+    }
+  }
+
+  public attachSelf = (req: Express.Request, _, next) => {
+    
   }
 
   /** Connects the bot to the server */

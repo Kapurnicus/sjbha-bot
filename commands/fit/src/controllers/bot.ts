@@ -1,8 +1,8 @@
 import {Request, Response} from "@bored/bastion";
 import {MessageEmbed} from "discord.js";
 import * as querystring from "querystring";
-import AuthService from "./services/Authorization";
-import config from "./config";
+import AuthService from "../services/AuthService";
+import config from "../config";
 
 
 /**
