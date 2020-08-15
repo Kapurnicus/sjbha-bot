@@ -50,10 +50,6 @@ export default class Bastion extends Router {
     }
   }
 
-  public attachSelf = (req: Express.Request, _, next) => {
-    
-  }
-
   /** Connects the bot to the server */
   public start = (onConnect=(client: Discord.Client)=>{}) => {
     this.client.on("ready", () => onConnect(this.client));
